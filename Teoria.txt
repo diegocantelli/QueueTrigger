@@ -6,3 +6,6 @@ Azure Service Bus
 		Queue(fila): É uma lista de mensagens armazenadas em uma determinada ordem,
 		geralmente na ordem em que são inseridas(FIFO), para que possam ser recuperadas
 		posteriormente.
+
+Pacotes necessários
+	Microsoft.Azure.ServiceBus
