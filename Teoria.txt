@@ -1,0 +1,8 @@
+Azure Service Bus
+	É um modo de enviar uma mensagem de um ponto a para o ponto b
+
+	Terminologia
+		Mensagem: É um objeto json que contém toda a informação que deseja ser enviada
+		Queue(fila): É uma lista de mensagens armazenadas em uma determinada ordem,
+		geralmente na ordem em que são inseridas(FIFO), para que possam ser recuperadas
+		posteriormente.
