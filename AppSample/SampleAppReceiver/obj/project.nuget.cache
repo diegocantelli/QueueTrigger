@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5XOtDz2rLyohmsDQCthvCNYw/12scD2e6EM9YBTcMjJlDzwLkO9pIkgUOgXH+ZT0RW46WUuGwCareJ+fXUOZaw==",
+  "dgSpecHash": "TWVYpa4TADnB2rckIEO0yz8xe13KMd7scqF1+U7jTIO3IoWlx/5QET0NQkBI3q9udMuwu56XcgCpkstw3MSr4Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\pc-cantelli\\Documents\\Programação 2018\\NET Core\\Service Bus\\Azure Service Bus\\AppSample\\SampleAppReceiver\\SampleAppReceiver.csproj",
   "expectedPackageFiles": [],

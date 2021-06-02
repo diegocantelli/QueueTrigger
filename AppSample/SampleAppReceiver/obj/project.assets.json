@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "SampleShared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/SampleShared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SampleShared.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SampleShared/1.0.0": {
+      "type": "project",
+      "path": "../SampleShared/SampleShared.csproj",
+      "msbuildProject": "../SampleShared/SampleShared.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "SampleShared >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\pc-cantelli\\.nuget\\packages\\": {},
@@ -37,7 +56,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\pc-cantelli\\Documents\\Programação 2018\\NET Core\\Service Bus\\Azure Service Bus\\AppSample\\SampleShared\\SampleShared.csproj": {
+              "projectPath": "C:\\Users\\pc-cantelli\\Documents\\Programação 2018\\NET Core\\Service Bus\\Azure Service Bus\\AppSample\\SampleShared\\SampleShared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
