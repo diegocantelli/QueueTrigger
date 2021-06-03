@@ -9,3 +9,9 @@ Azure Service Bus
 
 Pacotes necessários
 	Microsoft.Azure.ServiceBus
+
+Criação da fila
+	Logar no Azure e buscar pelo serviço Service Bus
+	No menu esquerda procurar pela opção Queues e clicar
+	Procurar o ícone de criar uma nova fila.
+	Após isso dê um nome para a fila e as demais configurações pode manter o que já estiver
