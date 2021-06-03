@@ -1,8 +1,11 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Azure.ServiceBus;
+using Microsoft.Extensions.Configuration;
 using SampleShared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace AppSample.Services
@@ -17,9 +20,20 @@ namespace AppSample.Services
         {
             _configuration = configuration;
         }
-        public Task SendMessageAssync(Person personMessage, string queueName)
+        public async Task SendMessageAssync(Person personMessage, string queueName)
         {
-            throw new NotImplementedException();
+            var connectionString = _configuration.GetConnectionString("AzureServiceBusConnection");
+
+            //QueueClient -> API de filas do Azure
+            var qClient = new QueueClient(connectionString, queueName);
+
+            var msgBody = JsonSerializer.Serialize(personMessage);
+
+            //Message -> API de msgs para serem enviadas à fila do azure
+            var msgByte = new Message(Encoding.UTF8.GetBytes(msgBody));
+
+            // enviando a msg para a fila
+            await qClient.SendAsync(msgByte);
         }
     }
 }
