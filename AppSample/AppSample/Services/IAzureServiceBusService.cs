@@ -8,6 +8,6 @@ namespace AppSample.Services
 {
     public interface IAzureServiceBusService
     {
-        Task SendMessageAssync(Person personMessage, string queuName);
+        Task SendMessageAssync(Person personMessage, string queueName);
     }
 }
