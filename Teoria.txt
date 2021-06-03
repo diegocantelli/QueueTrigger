@@ -15,3 +15,14 @@ Criação da fila
 	No menu esquerda procurar pela opção Queues e clicar
 	Procurar o ícone de criar uma nova fila.
 	Após isso dê um nome para a fila e as demais configurações pode manter o que já estiver
+
+Connection String da fila
+	Após a criação da fila é necessário criar uma connection string para a mesma, para isso
+	acesse no menu esquerdo:
+		Shared access policies -> Add
+		Em policy name defina um nome. Após isso defina as permissões de acesso à fila
+		referentes à connection string recém criada.
+		Após os passos anteriores, clique em Create.
+		
+		Para acessar a connection string, basta clicar sobre a policy recém criada
+		e copiar uma das policies disponíveis.
