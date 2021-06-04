@@ -20,6 +20,7 @@ namespace AppSample
             _azureServiceBusService = azureServiceBusService;
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
