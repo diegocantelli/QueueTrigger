@@ -1,6 +1,7 @@
 ﻿using AppSample.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using SampleShared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,14 @@ namespace AppSample
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Index(Person person)
+        {
+            await _azureServiceBusService.SendMessageAssync(person, "personqueue");
+
+            return RedirectToAction("Index");
         }
     }
 }
