@@ -1,4 +1,4 @@
-﻿using Microsoft.Azure.ServiceBus;
+﻿using Azure.Storage.Queues;
 using Microsoft.Extensions.Configuration;
 using SampleShared.Models;
 using System;
@@ -23,17 +23,23 @@ namespace AppSample.Services
         public async Task SendMessageAssync(Person personMessage, string queueName)
         {
             var connectionString = _configuration.GetConnectionString("AzureServiceBusConnection");
-
+            QueueClient qClient = null;
             //QueueClient -> API de filas do Azure
-            var qClient = new QueueClient(connectionString, queueName);
+            try
+            {
+                qClient = new QueueClient(connectionString, queueName);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
 
             var msgBody = JsonSerializer.Serialize(personMessage);
 
-            //Message -> API de msgs para serem enviadas à fila do azure
-            var msgByte = new Message(Encoding.UTF8.GetBytes(msgBody));
-
             // enviando a msg para a fila
-            await qClient.SendAsync(msgByte);
+            await qClient.SendMessageAsync(msgBody.ToString());
         }
     }
 }

@@ -8,21 +8,16 @@ Azure Service Bus
 		posteriormente.
 
 Pacotes necessários
-	Microsoft.Azure.ServiceBus
+	Azure.Storage.Queues
+	System.Configuration.ConfigurationManager
 
 Criação da fila
-	Logar no Azure e buscar pelo serviço Service Bus
-	No menu esquerda procurar pela opção Queues e clicar
-	Procurar o ícone de criar uma nova fila.
-	Após isso dê um nome para a fila e as demais configurações pode manter o que já estiver
-
+	Logar no Azure e buscar por Service Storage e criar um
+	Acriar uma queue associada ao Service Storage criado anteriormente
+	
 Connection String da fila
 	Após a criação da fila é necessário criar uma connection string para a mesma, para isso
-	acesse no menu esquerdo:
-		Shared access policies -> Add
-		Em policy name defina um nome. Após isso defina as permissões de acesso à fila
-		referentes à connection string recém criada.
-		Após os passos anteriores, clique em Create.
+	acesse no menu do Service Storage esquerdo a opção Acces Keys e copie uma das
+	connections strings disponíveis.
 		
-		Para acessar a connection string, basta clicar sobre a policy recém criada
-		e copiar uma das policies disponíveis.
+	
