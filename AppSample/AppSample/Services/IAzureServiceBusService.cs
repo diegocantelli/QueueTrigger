@@ -1,4 +1,5 @@
-﻿using SampleShared.Models;
+﻿using SampleShared.Interfaces;
+using SampleShared.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,6 @@ namespace AppSample.Services
     public interface IAzureServiceBusService
     {
         Task SendMessageAssync(Person personMessage, string queueName);
+        Task<string> PeekMessageAsync(string queueName);
     }
 }

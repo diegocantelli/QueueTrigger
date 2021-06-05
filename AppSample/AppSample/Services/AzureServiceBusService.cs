@@ -1,5 +1,6 @@
 ﻿using Azure.Storage.Queues;
 using Microsoft.Extensions.Configuration;
+using SampleShared.Interfaces;
 using SampleShared.Models;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,22 @@ namespace AppSample.Services
         {
             _configuration = configuration;
         }
+
+        public async Task<string> PeekMessageAsync(string queueName)
+        {
+            var connectionString = _configuration.GetConnectionString("AzureServiceBusConnection");
+
+            var qCliente = new QueueClient(connectionString, queueName);
+
+            if (!qCliente.Exists())
+            {
+                throw new Exception("A fila especificada não foi encontrada"); 
+            }
+
+            var msg = await qCliente.PeekMessageAsync();
+            return Encoding.ASCII.GetString(msg.Value.Body);
+        }
+
         public async Task SendMessageAssync(Person personMessage, string queueName)
         {
             var connectionString = _configuration.GetConnectionString("AzureServiceBusConnection");
