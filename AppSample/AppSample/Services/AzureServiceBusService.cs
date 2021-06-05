@@ -26,7 +26,10 @@ namespace AppSample.Services
         {
             var connectionString = _configuration.GetConnectionString("AzureServiceBusConnection");
 
-            var qCliente = new QueueClient(connectionString, queueName);
+            var qCliente = new QueueClient(connectionString, queueName, new QueueClientOptions 
+            { 
+                MessageEncoding = QueueMessageEncoding.Base64
+            });
 
             if (!qCliente.Exists())
             {
@@ -40,23 +43,16 @@ namespace AppSample.Services
         public async Task SendMessageAssync(Person personMessage, string queueName)
         {
             var connectionString = _configuration.GetConnectionString("AzureServiceBusConnection");
-            QueueClient qClient = null;
-            //QueueClient -> API de filas do Azure
-            try
+            var qCliente = new QueueClient(connectionString, queueName, new QueueClientOptions
             {
-                qClient = new QueueClient(connectionString, queueName);
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+                // convertendo para base64 para não dar erro no momento da leitura da msg
+                MessageEncoding = QueueMessageEncoding.Base64
+            });
 
             var msgBody = JsonSerializer.Serialize(personMessage);
 
             // enviando a msg para a fila
-            await qClient.SendMessageAsync(msgBody.ToString());
+            await qCliente.SendMessageAsync(msgBody);
         }
     }
 }
