@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleShared", "SampleShare
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleAppReceiver", "SampleAppReceiver\SampleAppReceiver.csproj", "{68BF2601-6460-42A0-BB9E-68EB17D8A133}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunction", "AzureFunction\AzureFunction.csproj", "{9F336C0A-ED4E-4ADA-8CCE-2F1CF0EFE144}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{68BF2601-6460-42A0-BB9E-68EB17D8A133}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68BF2601-6460-42A0-BB9E-68EB17D8A133}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68BF2601-6460-42A0-BB9E-68EB17D8A133}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F336C0A-ED4E-4ADA-8CCE-2F1CF0EFE144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F336C0A-ED4E-4ADA-8CCE-2F1CF0EFE144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F336C0A-ED4E-4ADA-8CCE-2F1CF0EFE144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F336C0A-ED4E-4ADA-8CCE-2F1CF0EFE144}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
