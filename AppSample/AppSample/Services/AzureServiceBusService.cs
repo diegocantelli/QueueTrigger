@@ -49,6 +49,7 @@ namespace AppSample.Services
                 MessageEncoding = QueueMessageEncoding.Base64
             });
 
+
             var msgBody = JsonSerializer.Serialize(personMessage);
 
             // enviando a msg para a fila

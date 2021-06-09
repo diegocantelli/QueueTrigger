@@ -5,11 +5,12 @@ using Microsoft.Extensions.Logging;
 
 namespace AzureFunction
 {
+    //[StorageAccount("")]
     public static class Function1
     {
         [FunctionName("Function1")]
         //Connection -> configuração lida de local.settings.json
-        public static void Run([QueueTrigger("personqueue", Connection = "AzureWebJobsStorage")]string myQueueItem, ILogger log)
+        public static void Run([QueueTrigger("personqueue")]string myQueueItem, ILogger log)
         {
             log.LogInformation($"C# Queue trigger function processed: {myQueueItem}");
         }

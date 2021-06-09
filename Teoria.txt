@@ -21,3 +21,16 @@ Connection String da fila
 	connections strings disponíveis.
 		
 	
+
+Local.settings.json
+	The local.settings.json file is an analogue of the app.config file 
+	in a conventional .Net application. 
+	This file contains the configuration settings for your application that can be 
+	published to App Settings in your Azure Function App environment.
+	The AzureWebJobsStorage and AzureWebJobsDashboard settings define 
+	the connection to the data storage and the logs storage accounts respectively. 
+	By default, they are set to the same value. All functions, except the HTTP 
+	triggered ones, currently require these connection strings to point to Azure 
+	even when the function is run locally. This is because the Functions Runtime 
+	uses Azure queues to schedule all triggers other than the HTTP trigger.
+	To run your local Function ...
